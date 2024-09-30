@@ -7,8 +7,13 @@ function App() {
   return (
     <Stack gap="0" h="100vh" w="100vw" bg="bgColor">
       <Header />
-      <Flex flexGrow="1" overflow="hidden">
-        <Flex flexGrow="1" alignSelf="center" justifyContent="center">
+      <Flex flexDirection={["column", "row"]} flexGrow="1" overflow="hidden">
+        <Flex
+          flexGrow={1}
+          flexDirection={["column", "row"]}
+          alignSelf="center"
+          justifyContent="center"
+        >
           <CatSelection />
         </Flex>
         <CatList />
