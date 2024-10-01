@@ -29,7 +29,7 @@ export function CatSelection() {
         <Button
           onClick={() => saveCat(currentCat as CatPicture)}
           size="lg"
-          w="105px"
+          w={"105px"}
           leftIcon={<CheckIcon />}
           colorScheme="green"
           isDisabled={currentCat === "loading" || currentCat === "error"}

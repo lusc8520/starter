@@ -9,7 +9,19 @@ export function CatList() {
 
   return (
     <Stack
-      sx={{ scrollbarWidth: "thin" }}
+      sx={{
+        "::-webkit-scrollbar": {
+          width: "8px",
+        },
+        "::-webkit-scrollbar-track": {
+          backgroundColor: "green",
+        },
+        "::-webkit-scrollbar-thumb": {
+          backgroundColor: "black",
+          borderRadius: "8px",
+        },
+        scrollbarColor: "black green",
+      }}
       overflowY="auto"
       borderLeftColor="headerColor"
       borderLeftWidth="10px"

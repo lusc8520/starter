@@ -37,7 +37,7 @@ const url = "https://api.thecatapi.com/v1/images/search";
 export function CatProvider({ children }: { children: ReactNode }) {
   const { value: allCats, updateState } = useLocalStorage<CatPicture[]>(
     "cat-pictures",
-    [],
+    []
   );
   const [currentCat, setCurrentCat] = useState<CatState>("loading");
   const toast = useToast();

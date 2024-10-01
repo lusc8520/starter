@@ -1,5 +1,5 @@
 import { CatPicture, useCats } from "../context/CatProvider.tsx";
-import { Box, Flex, IconButton, Image } from "@chakra-ui/react";
+import { Flex, IconButton, Image } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
 
 export function CatItem({ cat }: { cat: CatPicture }) {
@@ -17,14 +17,13 @@ export function CatItem({ cat }: { cat: CatPicture }) {
       _hover={{ cursor: "pointer", backgroundColor: "headerColor" }}
       transition={"background-color 0.15s"}
     >
-      <Box w="100px" h="50px">
-        <Image
-          objectFit="cover"
-          h="100%"
-          w="100%"
-          src={`https://cdn2.thecatapi.com/images/${cat.id}.jpg`}
-        />
-      </Box>
+      <Image
+        w="100px"
+        h="50px"
+        objectFit="cover"
+        src={`https://cdn2.thecatapi.com/images/${cat.id}.jpg`}
+      />
+
       <IconButton
         size="sm"
         colorScheme="red"

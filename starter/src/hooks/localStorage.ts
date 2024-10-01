@@ -6,16 +6,26 @@ type LocalStorage<T> = {
   updateState: (func: (prev: T) => T) => void;
 };
 
-export function useLocalStorage<T>(
-  key: string,
-  defaultValue: T,
-): LocalStorage<T> {
+function initializeValue<T>({
+  key,
+  defaultValue,
+}: {
+  key: string;
+  defaultValue: T;
+}) {
   const storageString = localStorage.getItem(key);
 
   const init =
     storageString !== null ? JSON.parse(storageString) : defaultValue;
 
-  const [value, setValue] = useState<T>(init);
+  return init;
+}
+
+export function useLocalStorage<T>(
+  key: string,
+  defaultValue: T
+): LocalStorage<T> {
+  const [value, setValue] = useState<T>(initializeValue({ key, defaultValue }));
 
   function setState(newState: T) {
     localStorage.setItem(key, JSON.stringify(newState));
